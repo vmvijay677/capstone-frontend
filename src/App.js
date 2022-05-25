@@ -9,36 +9,55 @@ import { ResetPassword } from './Components/ResetPassword';
 import { BlogList } from './Components/BlogList';
 import { AddBlogs } from './Components/AddBlogs';
 import { EditBlogs } from './Components/EditBlogs';
+import Slide from 'react-reveal/Slide';
 
 function App() {
   return (
     <div className="App">
-      <Switch>
-        <PrivateRoute exact path="/">
-          <PrivateScreen />
-        </PrivateRoute>
-        <PrivateRoute exact path="/blogs/view">
-          <BlogList />
-        </PrivateRoute>
-        <PrivateRoute exact path="/blogs/add">
-          <AddBlogs />
-        </PrivateRoute>
-        <PrivateRoute exact path="/blogs/edit/:id">
-          <EditBlogs />
-        </PrivateRoute>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/register">
-          <Register />
-        </Route>
-        <Route exact path="/forgot-password">
-          <ForgotPassword />
-        </Route>
-        <Route exact path="/resetpassword/:resetToken">
-          <ResetPassword />
-        </Route>
-      </Switch>
+      <Slide bottom>
+        <Switch>
+          <PrivateRoute exact path="/">
+            <Slide bottom>
+              <PrivateScreen />
+            </Slide>
+          </PrivateRoute>
+          <PrivateRoute exact path="/blogs/view">
+            <Slide bottom>
+              <BlogList />
+            </Slide>
+          </PrivateRoute>
+          <PrivateRoute exact path="/blogs/add">
+            <Slide bottom>
+              <AddBlogs />
+            </Slide>
+          </PrivateRoute>
+          <PrivateRoute exact path="/blogs/edit/:id">
+            <Slide bottom>
+              <EditBlogs />
+            </Slide>
+          </PrivateRoute>
+          <Route path="/login">
+            <Slide bottom>
+              <Login />
+            </Slide>
+          </Route>
+          <Route exact path="/register">
+            <Slide bottom>
+              <Register />
+            </Slide>
+          </Route>
+          <Route exact path="/forgot-password">
+            <Slide bottom>
+              <ForgotPassword />
+            </Slide>
+          </Route>
+          <Route exact path="/resetpassword/:resetToken">
+            <Slide bottom>
+              <ResetPassword />
+            </Slide>
+          </Route>
+        </Switch>
+      </Slide>
     </div>
   );
 }
